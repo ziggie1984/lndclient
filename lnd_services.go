@@ -377,6 +377,7 @@ func NewLndServices(cfg *LndServicesConfig) (*GrpcLndServices, error) {
 	// the real lightning client which uses the admin macaroon.
 	lightningClient := newLightningClient(
 		conn, timeout, chainParams, macaroons[AdminServiceMac],
+		macaroons[RouterServiceMac],
 	)
 
 	// With the network check passed, we'll now initialize the rest of the
